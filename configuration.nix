@@ -13,13 +13,9 @@
 
   time.timeZone = "Europe/Belgrade";
 
-  boot.loaders.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  environment.sessionVariables = rec {
-    XDG_CONFIG_HOME = "\${HOME}/.config";
-    XCURSOR_SIZE = "24";
-  };
+  boot.loader.grub.enable = true;
+  # boot.loaders.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
 
   users.users.takimoysha = {
     isNormalUser = true;
@@ -36,11 +32,13 @@
 
   services.printing.enable = true;
 
-  environment.sessionVariables = {
+  environment.sessionVariables = rec {
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
     XDG_DATA_HOME   = "$HOME/.local/share";
     XDG_STATE_HOME  = "$HOME/.local/state";
+
+    XCURSOR_SIZE = "24";
   };
 
   system.stateVersion = "24.05";

@@ -25,4 +25,4 @@ sudo nixos-rebuild switch
 # References
 
 1. [emptyflask / nixconfig / github.com](https://github.com/emptyflask/nixconfig)
-2. [smravec / nixos / github.com](https://github.com/smravec/nixos)
+2. [smravec / nixos / github.com](https://github.com/smravec/nixos-cofig)
