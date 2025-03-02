@@ -37,6 +37,7 @@
     neovim
     alacritty
     wget
+    git
   ];
 
   services.printing.enable = true;
