@@ -14,19 +14,28 @@
   time.timeZone = "Europe/Belgrade";
 
   boot.loader.grub.enable = true;
+  boot.loader.grub.efiSupport = true;
+  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader.grub.device = "/dev/sda";
   # boot.loaders.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
 
+  users.users.guest = {
+    isNormalUser = true;
+  };
+  users.users.demo = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ];
+  }
   users.users.takimoysha = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "users" "docker"];
+    extraGroups = [ "wheel" "docker"];
   };
 
   environment.systemPackages = with pkgs; [
     vim
     neovim
     alacritty
-    nmcli
     wget
   ];
 
